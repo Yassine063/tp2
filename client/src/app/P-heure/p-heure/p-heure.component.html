@@ -1,0 +1,73 @@
+<div *ngFor=" let donnee of donnees ">
+  <table class="table">
+
+    <thead>
+      <tr>
+        <p class="fw-lighter fs-6" style="color: rgb(26, 91, 94);">Dernier observation:
+          {{donnee.current_condition[0].localObsDateTime}}</p>
+
+      </tr>
+      <tr>
+        <span class="fw-bold "
+          style="color:rgb(64, 107, 29)">{{donnee.nearest_area[0].areaName[0].value}},{{donnee.nearest_area[0].region[0].value}},
+          {{donnee.nearest_area[0].country[0].value}}</span>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th scope="row">Temps</th>
+        <div *ngFor=" let donnee of donnees ">
+        <td>{{donnee.weather[0].hourly[0].time | militaire }}  </td>
+        </div>
+      </tr>
+
+      <tr>
+        <th scope="row">Température</th>
+
+        <td>{{donnee.weather[0].hourly[0].tempC}} °C (Res{{donnee.weather[0].hourly[0].FeelsLikeC}}) </td>
+
+      </tr>
+      <tr>
+        <th scope="row">Conditions </th>
+
+        <td>{{donnee.weather[0].hourly[0].weatherDesc[0].value}} </td>
+
+      </tr>
+      <tr>
+        <th scope="row">Vents</th>
+
+        <td>{{donnee.weather[0].hourly[0].windspeedKmph}} Km/h </td>
+
+      </tr>
+
+      <tr>
+        <th scope="row">Visibilité</th>
+
+        <td>{{donnee.weather[0].hourly[0].visibility}} Km</td>
+
+      </tr>
+      <tr>
+        <th scope="row">UV</th>
+
+        <td>{{donnee.weather[0].hourly[0].uvIndex}} </td>
+
+      </tr>
+      <tr>
+        <th scope="row">humidity</th>
+
+        <td>{{donnee.weather[0].hourly[0].humidity}} </td>
+
+      </tr>
+      <tr>
+        <th scope="row">Précipitations</th>
+
+        <td>{{donnee.weather[0].hourly[0].precipMM}} mm </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
